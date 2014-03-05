@@ -1,0 +1,443 @@
+@font-face {
+    font-family: 'Comfortaa-Regular';
+    src: url('../fonts/Comfortaa-Regular.ttf');
+}
+
+body{
+    font-size: 12px;
+    cursor: default;
+    font-family: Comfortaa-Regular;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+#container{
+    position: absolute;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+#stats{
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+
+.slidebar-item{
+    padding: 5px 10px;
+}
+
+#splash{
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #000000),
+        color-stop(1, #200C45)
+        );
+    background-image: -o-linear-gradient(bottom, #000000 0%, #200C45 100%);
+    background-image: -moz-linear-gradient(bottom, #000000 0%, #200C45 100%);
+    background-image: -webkit-linear-gradient(bottom, #000000 0%, #200C45 100%);
+    background-image: -ms-linear-gradient(bottom, #000000 0%, #200C45 100%);
+    background-image: linear-gradient(to bottom, #000000 0%, #200C45 100%);
+    z-index: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+#top-menu {
+    z-index: 10;
+    padding: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.logo{
+    font-size: 26px;
+    display: inline-block;
+}
+
+.window{
+    display: none;
+    z-index: 5;
+    overflow: auto;
+    border: 2px solid white;
+    top: 50px;
+    left: 20px;
+    right: 20px;
+    bottom: 40px;
+    position: absolute;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+#locations, #map{
+    text-align: center;
+}
+
+
+#locations #about-project{
+    opacity: 0.85;
+}
+
+.location-name{
+    font-size: 133%;
+}
+
+#about-project{
+    text-align: left;
+    font-size: 12px;
+    padding: 20px;
+}
+
+.about-logos{
+    height: 32px;
+}
+
+#loading-window{
+    display: none;
+    z-index: 1;
+    width: 160px;
+    height: 50px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 10px 0px 0px 0px;
+    border: 1px solid white;
+    background-color: #000000;
+    /*opacity: 0.85;*/
+    text-align: center; 
+}
+
+#loading-text{
+    text-align: center;
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: super;
+}
+
+table{
+    width: 100%;
+    height: 100%;
+}
+
+table tr td{
+    border-top:1px dashed #fff;
+    border-left:1px dashed #fff;
+    padding: 1%;
+    min-width: 16px;
+}
+
+table tr td:first-child{
+    border-left:0;
+}
+
+table tr:first-child td{
+    border-top:0;
+    background-color: grey;
+}
+
+
+#info{
+    padding: 5px;
+    position: absolute;
+    display: none;
+    background-color: #000000;
+    opacity: 0.85;
+    color: #ffffff;
+    border: 1px solid white;
+}
+
+#photo{
+    padding: 5px;
+    position: absolute;
+    display: none;
+    background-color: #fff;
+    color: #000;
+}
+
+.photo{
+    width: 100px;
+}
+
+#gallery{
+    column-width: 256px;
+    -moz-column-width: 256px;
+    -webkit-column-width: 256px;
+    /*min-height: 180px;*/
+/*    column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    -webkit-column-break-inside: avoid;*/
+    height: 180px;
+}
+
+.panorama-box {
+    cursor: pointer;
+    text-align: center;
+    padding: 5px;
+    /*float: left;*/
+    
+}
+
+.panorama-box img{
+    width: 256px;
+}
+
+#menu{
+    z-index: 20;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    color: #ffffff;
+    text-align: center;
+}
+
+#inside-menu{
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#menu div{
+    display: inline-block;
+}
+
+#information{
+    font-size: 16px;
+}
+
+.plus{
+    background-image: url('../images/plus.png');
+}
+
+.minus{
+    background-image: url('../images/minus.png');
+}
+
+.check{
+    background-image: url('../images/check.png');
+}
+
+.uncheck{
+    background-image: url('../images/uncheck.png');
+}
+.menu-button{
+    height: 10px;
+    width: 10px;
+    background-size: cover;
+}
+
+#mini-map{
+    z-index: 20;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 220px;
+    height: 150px;
+    border: 1px solid white;
+    display: none;
+}
+
+.link{
+    color: #C2C2C2;
+}
+
+.menu-item{
+    padding: 0 10px;
+    display: inline-block;
+}
+
+#menu-item-slidebar{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    padding: 14px;
+}
+
+.navicon-line {
+    width: 24px;
+    height: 4px;
+    border-radius: 1px;
+    margin-bottom: 3px;
+    background-color: #fff;
+}
+
+.switch{
+    margin-left: 10px;
+    border-radius: 20%;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    right: 0px;
+    background-color: #C2C2C2;
+}
+
+.switch-on{
+    /*background-color: #fff;*/
+    visibility: visible;
+}
+
+.switch-off{
+    /*background-color: #999;*/
+    visibility: hidden;
+}
+
+#version{
+    font-family: monospace;
+}
+
+@-webkit-keyframes loading {
+    0% {-webkit-transform: rotate(0deg);}
+25% {-webkit-transform: rotate(160deg);}
+50% {-webkit-transform: rotate(0deg);}
+75% {-webkit-transform: rotate(160deg);}
+100% {-webkit-transform: rotate(0deg);}
+}
+
+@keyframes loading {
+    0% {transform: rotate(0deg);}
+25% {transform: rotate(160deg);}
+50% {transform: rotate(0deg);}
+75% {transform: rotate(160deg);}
+100% {transform: rotate(0deg);}
+}
+
+.loading { 
+    z-index: 1;
+    background-color: transparent;
+    border-radius: 50%;
+    margin: 2px auto;
+    -webkit-animation: loading 5s infinite linear;
+    animation: loading 5s infinite linear;
+}
+
+.spin-1{
+    border: 2px solid #c00353 ;
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+}
+.spin-2{
+    border: 2px solid #05bbc3 ;
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+    width: 22px;
+    height: 22px;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+.spin-3{
+    border: 2px solid #d2d947 ;
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+    width: 14px;
+    height: 14px; 
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+.spin-4{
+    border: 2px solid #f2a342 ;
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+    width: 6px;
+    height: 6px; 
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+.spin-5{
+    border: 1px solid #fff ;
+    width: 0px;
+    height: 0px; 
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+
+html.slide-anim #slidebar{
+    -webkit-transition: -webkit-transform 400ms ease;
+    -moz-transition: -moz-transform 400ms ease;
+    -o-transition: -o-transform 400ms ease;
+    transition: transform 400ms ease;
+    -webkit-transition-property: -webkit-transform, left; /* Add 'left' for Android < 4.4 */
+    -webkit-backface-visibility: hidden; /* Prevents flickering. */
+}
+
+@media (max-width: 440px) {
+    #menu-item-location-list, #menu-item-location-map{
+        display: none;
+    }
+}
+
+@media (max-width: 570px) {
+    #menu-item-gallery {
+        display: none;
+    }
+}
+
+@media (max-width: 670px) {
+    #menu-item-about {
+        display: none;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+    .window{
+        top: 80px;
+        left: 40px;
+        right: 40px;
+        bottom: 80px;
+    }
+}
+
+@media (min-width: 1401px) and (max-width: 1600px) {
+    .window{
+        top: 80px;
+        left: 60px;
+        right: 60px;
+        bottom: 80px;
+    }
+}
+
+@media (min-width: 1601px) {
+    .window{
+        top: 10%;
+        left: 6%;
+        right: 6%;
+        bottom: 10%;
+    }
+}
+
+/*@media (min-width: 481px) and (max-width: 991px) {
+        .sb-slidebar {
+                width: 50%;  Slidebar width on small screens. 
+        }
+}
+
+@media (min-width: 992px) {
+        .sb-slidebar {
+                width: 35%;  Slidebar width on medium screens. 
+        }
+}
+
+@media (min-width: 1200px) {
+        .sb-slidebar {
+                width: 20%;  Slidebar width on large screens. 
+        }
+}*/
+
+/* ---------------
+ * 004 - Animation
+ */
+

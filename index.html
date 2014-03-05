@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Kielce 360</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name=”mobile-web-app-capable” content=”yes”>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/slidebars.css">
+    </head>
+    <body>       
+        <script src="lib/jquery-1.10.2.min.js"></script>
+        <script src="lib/three.min.r63.js"></script>
+        <script src="lib/stats.min.js"></script>
+        <script src="lib/helvetiker_regular.typeface.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?sensor=false&language=pl"></script>
+        <script src="lib/slidebars.min.js"></script>
+
+        <div id="slidebar-left" class="sb-slidebar sb-left">
+            <div class="slidebar-item">Wybór miejsca</div>
+            <div class="slidebar-item link" onclick='toggleLocationList()'>Lista lokalizacji</div>
+            <div class="slidebar-item link" onclick='toggleMapWindow()'>Mapa lokalizacji</div>
+            <div class="slidebar-item link" onclick='toggleGalleryWindow()'>Galeria panoram</div>
+            <br>
+            <div class="slidebar-item">Opcje widoku</div>
+            <div id="minimap-switch" class="slidebar-item link" onclick='toggleMiniMap()'>
+                Mini-mapa
+                <div class="switch switch-off"></div>
+            </div>
+            <div id="info-switch" class="slidebar-item link" onclick='toggleMenu()'>
+                Informacje
+                <div class="switch switch-on"></div>  
+            </div>
+            <br>
+            <div class="slidebar-item">Opcje projekcji</div>
+            <div id="distortion-switch" class="slidebar-item link">
+                Dystorsja
+                <div class="switch switch-off"></div>
+            </div>
+            <div id="autorotate-switch" class="slidebar-item link">
+                Auto-obrót
+                <div class="switch switch-off"></div>
+            </div>
+            <br>
+            <div class="slidebar-item link" onclick='toggleAboutWindow()'>O projekcie</div>
+        </div>
+
+        <div class="sb-site">
+
+            <div id="container"></div>
+
+            <div id="top-menu">
+                <div id="menu-item-slidebar">
+                    <div class="navicon-line"></div>
+                    <div class="navicon-line"></div>
+                    <div class="navicon-line"></div>                   
+                </div>
+                <div class="logo">Kielce360</div>
+                <div id="menu-item-location-list" class="menu-item link" onclick='toggleLocationList()'>Lista lokalizacji</div>
+                <div id="menu-item-location-map" class="menu-item link" onclick='toggleMapWindow()'>Mapa lokalizacji</div>
+                <div id="menu-item-gallery" class="menu-item link" onclick='toggleGalleryWindow()'>Galeria panoram</div>
+                <div id="menu-item-about" class="menu-item link" onclick='toggleAboutWindow()'>O projekcie</div>
+            </div>
+
+            <div id="locations" class="window"></div>
+            <div id="map" class="window"></div>
+            <div id="gallery" class="window"></div>
+            <div id="about-project" class="window">
+                <h2>O projekcie</h2>
+                <h3>Opis</h3>
+                <p>Projekt powstał w celu zaprezentowania ciekawych miejsc w Kielcach za pomoca panoram sferycznych. W przeciwieństwie do popularnej platformy Google StreetView, panoramy znajdujące się na tej stronie wykonane zostały w różnych porach dnia i miejscach, do których nie zawsze można dojechać samochodem. Dzięki temu możliwe jest pokazanie tego miasta od zupełnie nowej strony. Pierwsza panorama dla projektu wykonana została w Marcu 2011 roku, wtedy też powstał pierwszy kod aplikacji, dzięki któremu była możliwa responsywna, pełnoekranowa projekcjia panoramy sferycznej w przeglądarkach internetowych, bez użycia technologii Flash.</p>
+                <h3>Aplikacja</h3>
+                <p>Wyświetlanie panoram realizowane jest przy użyciu platformy HTML5 oraz technologii WebGL, dzięki której możliwe jest wykorzystanie mocy obliczeniowej karty graficznej. Kod aplikacji napisany jest w języku JavaScript z wykorzystaniem biblioteki JQuery, natomiast silnik renderujący panoramę opiera się na bibliotece Three.js.</p>
+                <p>Aplikacja posiada zaimplementowaną obsługę za pomocą dotyku, oraz została zaprojektowana w spoósb responsywny, dostosowujący szablon strony do ekranów o małej i dużej rozdzielczości. W celu jej poprawnego działania, zalecane jest użycie najnowszej wersji przeglądarki Chrome, Firefox lub Opera. Wspierają one wykorzystane w aplikacji technologie i są dostepne na wiele platform, w tym także na urządzenia mobilne, gdzie mają następujące wymagania:
+                <p>
+                    Chrome - Android 4.0 lub iOS 6<br>
+                    Opera - Android 4.0<br>
+                    Firefox - Android 2.2, procesor ARMv7 i 512 MB pamięci RAM.
+                </p>
+                    Bieżąca wersja aplikacji: <pre>v1.0.0 (04.03.2014)</pre>
+
+                <img class="about-logos" src="images/html5.svg">
+                <img class="about-logos" src="images/webgl.png">
+                <img class="about-logos" src="images/chrome.png">
+                <img class="about-logos" src="images/firefox.png">
+                <img class="about-logos" src="images/opera.png">
+                <img class="about-logos" src="images/android.svg">
+                <h3>Kontakt</h3>
+                <p>Sebastian Klikowicz</p>
+                <a href="mailto:kliqkliq@gmail.com">kliqkliq@gmail.com</a>
+
+            </div>
+            <div id="info"></div>
+            <div id="photo"></div>
+            <div id="splash"></div>
+            <div id="mini-map"></div>
+            <div id="loading-window">
+
+                <div class="loading spin-1">
+                    <div class="loading spin-2">
+                        <div class="loading spin-3">
+                            <div class="loading spin-4">
+                                <div class="loading spin-5"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="loading-text">Wczytywanie</div>
+
+            </div>
+
+            <div id="menu">
+                <div id="inside-menu">
+                    <div id="location-name">Wybierz panoramę</div>
+                    <div id="panorama-index"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="app/detector.js"></script>
+        <script src="app/config.js"></script>
+        <script src="app/wm.js"></script>
+        <script src="app/ui.js"></script>
+        <script src="app/map.js"></script> 
+        <script src="app/engine360-1.0.min.js"></script>
+        <!--<script src="app/engine.js"></script>-->
+        <script src="app/events.js"></script>
+        <script src="app/app.js"></script>
+
+    </body>
+</html>
